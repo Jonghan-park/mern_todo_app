@@ -7,6 +7,7 @@ module.exports = () => {
     useUnifiedTopology: true,
   };
   try {
+    // Connect the DB using variable in .env file and parameter named connectionParameter which is declared above
     mongoose.connect(process.env.MONGO_URI, connectionParameter);
     console.log("Connected to database successfully");
   } catch (error) {
