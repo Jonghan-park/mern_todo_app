@@ -4,10 +4,14 @@ const todo = () => {
   return (
     <div className="todoContainer">
       <form className="todoForm">
+        <h1 className="todoTitle">My Todo List</h1>
         <label className="todoLabel" htmlFor="todo">
           To do
         </label>
-        <input className="todoInput" type="text" name="todo" />
+        <div className="inputAndBtn">
+          <input className="todoInput" type="text" name="todo" />
+          <button className="inputBtn">Enter</button>
+        </div>
       </form>
     </div>
   );
