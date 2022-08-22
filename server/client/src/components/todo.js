@@ -5,7 +5,7 @@ const todo = () => {
     <div className="todoContainer">
       <form className="todoForm">
         <label className="todoLabel" htmlFor="todo">
-          To do:
+          To do
         </label>
         <input className="todoInput" type="text" name="todo" />
       </form>
