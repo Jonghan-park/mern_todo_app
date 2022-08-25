@@ -10,7 +10,13 @@ exports.getAllTodos = async (req, res) => {
 };
 exports.addTodo = async (req, res) => {
   try {
-    console.log(req.body);
+    const todo = new Todo({
+      text: req.body.text,
+    });
+
+    todo.save();
+
+    res.json(todo);
   } catch (error) {
     console.log(error);
   }

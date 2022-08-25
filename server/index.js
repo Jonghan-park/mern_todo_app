@@ -5,7 +5,7 @@ const port = process.env.PORT || 5000;
 const cors = require("cors");
 const dbConnect = require("./db/db");
 const Todo = require("./model/todo");
-const todoRoute = require("./");
+const todoRoute = require("./Routes/todo");
 
 // Connect DB from ./db/db
 dbConnect();

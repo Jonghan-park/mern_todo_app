@@ -1,12 +1,17 @@
 import React from "react";
 import "./App.css";
 import TodoForm from "./components/todoForm";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <TodoForm />
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<TodoForm />} />
+      </Routes>
+    </Router>
   );
 }
 
