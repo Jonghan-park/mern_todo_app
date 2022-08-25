@@ -1,6 +1,6 @@
 const Todo = require("../model/todo");
 
-const getAllTodos = async (req, res) => {
+exports.getAllTodos = async (req, res) => {
   try {
     const todos = await Todo.find({});
     res.json(todos);
@@ -8,5 +8,10 @@ const getAllTodos = async (req, res) => {
     console.log(error);
   }
 };
-
-module.exports.getAllTodos = getAllTodos;
+exports.addTodo = async (req, res) => {
+  try {
+    console.log(req.body);
+  } catch (error) {
+    console.log(error);
+  }
+};
