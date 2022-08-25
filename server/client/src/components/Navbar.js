@@ -9,7 +9,7 @@ const Navbar = () => {
           My<span className="highlight_todo">Todo</span>List
         </h2>
       </div>
-      <ul>
+      <ul className="navbar-category">
         <li className="navbar-links">
           <Link to="/">Home</Link>
         </li>

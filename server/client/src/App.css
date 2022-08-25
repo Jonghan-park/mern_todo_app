@@ -28,6 +28,14 @@
   cursor: pointer;
   color: #fff;
 }
+.navbar-links a:hover {
+  color: rgb(89, 171, 242);
+}
+.navbar-category{
+  display: flex;
+  font-size: 2rem;
+
+}
 .todoContainer{
   width: 50%;
   border: 2px solid black;
