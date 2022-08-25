@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Todo from "./todo";
 
 const TodoForm = () => {
   const [todos, setTodos] = useState([]);
 
+  const addTodoHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post("/todo");
+    } catch (error) {}
+  };
+
   const getTodos = async () => {
-    const data = await fetch("http://localhost:5000/todos")
-      .then((res) => res.json())
-      .then((data) => setTodos(data))
-      .catch((err) => console.log("Error: ", err));
+    try {
+      const { data } = await axios.get("/api/todos");
+      setTodos(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     getTodos();
@@ -16,7 +26,7 @@ const TodoForm = () => {
 
   return (
     <div className="todoContainer">
-      <form className="todoForm">
+      <form className="todoForm" onSubmit={addTodoHandler}>
         <h1 className="todoTitle">My Todo List</h1>
         <label className="todoLabel" htmlFor="todo">
           To do
