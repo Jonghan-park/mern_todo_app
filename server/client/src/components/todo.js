@@ -1,16 +1,16 @@
 import axios from "axios";
 import React from "react";
 import { BsTrash } from "react-icons/bs";
-const todo = ({ todos }) => {
+const todo = (props) => {
   const deleteHandler = async (id) => {
-    await axios.post("api/todo/delete", { id });
+    props.getIdInTodo(id);
   };
   const completeHandler = async (id) => {
     await axios.post("api/todo/complete", { id });
   };
   return (
     <div className="todos">
-      {todos.map((todo, index) => {
+      {props.todos.map((todo, index) => {
         return (
           <div className="todo-container" key={index}>
             <h1

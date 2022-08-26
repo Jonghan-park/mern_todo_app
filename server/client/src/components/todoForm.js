@@ -12,6 +12,7 @@ const TodoForm = () => {
     try {
       const result = await axios.post("/api/todo/new", { todo });
       setTodos([...todos, result.data]);
+      setTodo("");
     } catch (error) {
       setError(error);
       console.log(error);
@@ -19,6 +20,11 @@ const TodoForm = () => {
         setError("");
       }, 3000);
     }
+  };
+  const deleteTodoHandler = async (id) => {
+    const result = await axios.post("api/todo/delete", { id });
+
+    setTodos((todos) => todos.filter((todo) => todo._id !== result.data._id));
   };
 
   const getTodos = async () => {
@@ -50,7 +56,9 @@ const TodoForm = () => {
         </div>
         {error && <h2 className="errorMessage">{error}</h2>}
       </form>
-      <div className="todos">{todos && <Todo todos={todos} />}</div>
+      <div className="todos">
+        {todos && <Todo todos={todos} getIdInTodo={deleteTodoHandler} />}
+      </div>
     </div>
   );
 };
