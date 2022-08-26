@@ -9,9 +9,10 @@ exports.getAllTodos = async (req, res) => {
   }
 };
 exports.addTodo = async (req, res) => {
+  const { todoFront } = req.body;
   try {
     const todo = new Todo({
-      todo: req.body.todo,
+      todo: todoFront,
     });
 
     todo.save();
