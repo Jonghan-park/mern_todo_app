@@ -2,16 +2,19 @@ import axios from "axios";
 import React from "react";
 
 const todo = ({ todos }) => {
-  const deleteTodo = async (id) => {
-    await axios.post("api/todo/del", { id });
+  const deleteHandler = async (id) => {
+    await axios.post("api/todo/delete", { id });
+  };
+  const completeHandler = async (id) => {
+    await axios.post("api/todo/complete");
   };
   return (
     <div className="todos">
       {todos.map((todo, index) => {
         return (
           <div key={index}>
-            <h1>{todo.todo}</h1>
-            <button onClick={() => deleteTodo(todo._id)}>del</button>
+            <h1 onClick={() => completeHandler(todo._id)}>{todo.todo}</h1>
+            <button onClick={() => deleteHandler(todo._id)}>del</button>
           </div>
         );
       })}
