@@ -50,6 +50,16 @@
   flex-direction: column;
   justify-content: center;
 }
+.todo-container{
+  
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .todoTitle{
   font-size: 3rem;
   font-weight: 900;
