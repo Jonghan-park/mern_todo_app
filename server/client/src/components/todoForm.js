@@ -23,7 +23,6 @@ const TodoForm = () => {
   const getTodos = async () => {
     try {
       const { data } = await axios.get("/api/todos");
-      console.log(data);
       setTodos(data);
     } catch (error) {
       console.log(error);
