@@ -10,8 +10,8 @@ const TodoForm = () => {
   const addTodoHandler = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/todo/new", { todo });
-      setTodo("");
+      const result = await axios.post("/api/todo/new", { todo });
+      setTodos([...todos, result.data]);
     } catch (error) {
       setError(error);
       console.log(error);
@@ -31,7 +31,7 @@ const TodoForm = () => {
   };
   useEffect(() => {
     getTodos();
-  }, [todos]);
+  }, []);
   return (
     <div className="todoContainer">
       <form className="todoForm" onSubmit={addTodoHandler}>
