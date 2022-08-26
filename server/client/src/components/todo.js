@@ -3,10 +3,10 @@ import React from "react";
 import { BsTrash } from "react-icons/bs";
 const todo = (props) => {
   const deleteHandler = async (id) => {
-    props.getIdInTodo(id);
+    props.deleteFindById(id);
   };
   const completeHandler = async (id) => {
-    await axios.post("api/todo/complete", { id });
+    props.completeFindById(id);
   };
   return (
     <div className="todos">
