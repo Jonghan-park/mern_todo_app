@@ -11,7 +11,7 @@ exports.getAllTodos = async (req, res) => {
 exports.addTodo = async (req, res) => {
   try {
     const todo = new Todo({
-      text: req.body.text,
+      todo: req.body.todo,
     });
 
     todo.save();

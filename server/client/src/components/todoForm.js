@@ -9,8 +9,9 @@ const TodoForm = () => {
 
   const addTodoHandler = async (e) => {
     e.preventDefault();
+    console.log(todo);
     try {
-      await axios.post("/api/todo/new", { text: todo });
+      await axios.post("/api/todo/new", { todo: todo });
     } catch (error) {
       setError(error);
       console.log(error);
