@@ -3,7 +3,7 @@ import axios from "axios";
 import Todo from "./todo";
 
 const TodoForm = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState();
   const [todo, setTodo] = useState(null);
   const [error, setError] = useState("");
 
@@ -30,9 +30,10 @@ const TodoForm = () => {
     }
   };
   useEffect(() => {
-    getTodos();
+    if (!todos) {
+      getTodos();
+    }
   }, []);
-
   return (
     <div className="todoContainer">
       <form className="todoForm" onSubmit={addTodoHandler}>
@@ -51,9 +52,7 @@ const TodoForm = () => {
         </div>
         {error && <h2 className="errorMessage">{error}</h2>}
       </form>
-      <div className="todos">
-        <Todo todos={todos} />
-      </div>
+      <div className="todos">{todos && <Todo todos={todos} />}</div>
     </div>
   );
 };
