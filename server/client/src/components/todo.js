@@ -6,14 +6,19 @@ const todo = ({ todos }) => {
     await axios.post("api/todo/delete", { id });
   };
   const completeHandler = async (id) => {
-    await axios.post("api/todo/complete");
+    await axios.post("api/todo/complete", { id });
   };
   return (
     <div className="todos">
       {todos.map((todo, index) => {
         return (
           <div key={index}>
-            <h1 onClick={() => completeHandler(todo._id)}>{todo.todo}</h1>
+            <h1
+              className={"eachTodo" + (todo.complete ? "-complete" : "")}
+              onClick={() => completeHandler(todo._id)}
+            >
+              {todo.todo}
+            </h1>
             <button onClick={() => deleteHandler(todo._id)}>del</button>
           </div>
         );

@@ -73,3 +73,10 @@
   box-shadow: 2px 2px black;
   border-radius: 2%;
 }
+.eachTodo{
+  cursor: pointer;
+}
+.eachTodo-complete{
+  cursor: pointer;
+  text-decoration: line-through;
+}
