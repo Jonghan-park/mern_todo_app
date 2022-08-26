@@ -3,14 +3,15 @@ import axios from "axios";
 import Todo from "./todo";
 
 const TodoForm = () => {
-  const [todos, setTodos] = useState();
-  const [todo, setTodo] = useState(null);
+  const [todos, setTodos] = useState([]);
+  const [todo, setTodo] = useState("");
   const [error, setError] = useState("");
 
   const addTodoHandler = async (e) => {
     e.preventDefault();
     try {
       await axios.post("/api/todo/new", { todo });
+      setTodo("");
     } catch (error) {
       setError(error);
       console.log(error);
@@ -29,10 +30,8 @@ const TodoForm = () => {
     }
   };
   useEffect(() => {
-    if (!todos) {
-      getTodos();
-    }
-  }, []);
+    getTodos();
+  }, [todos]);
   return (
     <div className="todoContainer">
       <form className="todoForm" onSubmit={addTodoHandler}>

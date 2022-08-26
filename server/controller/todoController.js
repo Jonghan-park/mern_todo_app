@@ -19,3 +19,11 @@ exports.addTodo = async (req, res) => {
     console.log(error);
   }
 };
+exports.deleteTodo = async (req, res) => {
+  try {
+    const result = await Todo.findByIdAndDelete(req.body.id);
+    res.json({ result });
+  } catch (error) {
+    console.log(error);
+  }
+};
