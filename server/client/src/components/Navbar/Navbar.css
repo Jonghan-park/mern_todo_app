@@ -31,3 +31,10 @@
   font-size: 2rem;
 
 }
+.logo a{
+  color: #fff;
+  text-decoration: none;
+}
+.logo span{
+  color: rgb(82, 160, 237);
+}

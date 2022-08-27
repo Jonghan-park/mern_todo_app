@@ -7,7 +7,9 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="logo">
         <h2>
-          My<span className="highlight_todo">Todo</span>List
+          <Link to="/">
+            My<span className="highlight_todo">Todo</span>List
+          </Link>
         </h2>
       </div>
       <ul className="navbar-category">
