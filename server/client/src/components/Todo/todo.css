@@ -1,0 +1,23 @@
+.todo-container{
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eachTodo{
+  cursor: pointer;
+}
+.eachTodo-complete{
+  cursor: pointer;
+  text-decoration: line-through;
+}
+.todo-container{
+  
+}
+.trash-icon{
+  cursor: pointer;
+  font-size: 2rem;
+}

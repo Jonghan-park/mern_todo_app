@@ -1,5 +1,6 @@
 import React from "react";
-import TodoForm from "./todoForm";
+import TodoForm from "../../components/Todo/todoForm";
+import "./Main.css";
 
 const Main = () => {
   return (

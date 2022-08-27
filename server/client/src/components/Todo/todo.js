@@ -1,6 +1,6 @@
-import axios from "axios";
 import React from "react";
 import { BsTrash } from "react-icons/bs";
+import "./todo.css";
 const todo = (props) => {
   const deleteHandler = async (id) => {
     props.deleteFindById(id);

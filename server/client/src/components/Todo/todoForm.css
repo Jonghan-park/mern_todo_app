@@ -1,0 +1,40 @@
+.todoContainer{
+  width: 50%;
+  border: 2px solid black;
+  margin: 2rem;
+  padding: 2rem;
+  box-shadow: 5px 5px rgb(84, 142, 222);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.todoTitle{
+  font-size: 3rem;
+  font-weight: 900;
+}
+.todoForm{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.todoLabel{
+  padding: 0.5rem;
+  font-size: 2rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 700; 
+}
+.inputAndBtn{
+  display: flex;
+}
+.inputBtn{
+  border-radius: 5%;
+  font-weight: 700;
+  box-shadow: 1px 2px black;
+}
+.todoInput{
+  width: 90%;
+  padding: 0.5rem;
+  box-shadow: 2px 2px black;
+  border-radius: 2%;
+}
