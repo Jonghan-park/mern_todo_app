@@ -6,7 +6,7 @@
 
 # Purpose
 
-I needed a todo application to track my todo list, and I decided to make the application by myself to use.
+I needed a todo application to track my todo list, and I decided to make the application by myself. This project is for personal use. 
 
 # Environment
 
