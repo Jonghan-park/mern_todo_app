@@ -6,6 +6,7 @@
   align-items: center;
   background: rgb(0, 0, 0);
   padding: 0.5rem 1rem 0;
+  box-shadow: 1px ;
 }
 .navbar-links{
   font-family: 'Cormorant Upright', serif;
