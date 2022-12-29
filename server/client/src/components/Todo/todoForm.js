@@ -11,7 +11,10 @@ const TodoForm = () => {
   const addTodoHandler = async (e) => {
     e.preventDefault();
     try {
-      const result = await axios.post("/api/todo/new", { todo });
+      const result = await axios.post(
+        "https://todo-jonghan.onrender.com/api/todo/new",
+        { todo }
+      );
       setTodos([...todos, result.data]);
       setTodo(" ");
     } catch (error) {
@@ -23,13 +26,19 @@ const TodoForm = () => {
     }
   };
   const deleteTodoHandler = async (id) => {
-    const result = await axios.post("api/todo/delete", { id });
+    const result = await axios.post(
+      "https://todo-jonghan.onrender.com/api/todo/delete",
+      { id }
+    );
 
     setTodos((todos) => todos.filter((todo) => todo._id !== result.data._id));
   };
 
   const completeTodoHandler = async (id) => {
-    const result = await axios.post("api/todo/complete", { id });
+    const result = await axios.post(
+      "https://todo-jonghan.onrender.com/api/todo/complete",
+      { id }
+    );
     setTodos((todos) =>
       todos.map((todo) => {
         if (todo._id === result.data._id) {
@@ -42,7 +51,9 @@ const TodoForm = () => {
 
   const getTodos = async () => {
     try {
-      const { data } = await axios.get("/api/todos");
+      const { data } = await axios.get(
+        "https://todo-jonghan.onrender.com/api/todos"
+      );
       setTodos(data);
     } catch (error) {
       console.log(error);
