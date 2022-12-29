@@ -13,7 +13,9 @@ const TodoForm = () => {
     try {
       const result = await axios.post(
         "https://todo-jonghan.onrender.com/api/todo/new",
-        { todo }
+        {
+          todo,
+        }
       );
       setTodos([...todos, result.data]);
       setTodo(" ");
@@ -28,7 +30,9 @@ const TodoForm = () => {
   const deleteTodoHandler = async (id) => {
     const result = await axios.post(
       "https://todo-jonghan.onrender.com/api/todo/delete",
-      { id }
+      {
+        id,
+      }
     );
 
     setTodos((todos) => todos.filter((todo) => todo._id !== result.data._id));
@@ -37,7 +41,9 @@ const TodoForm = () => {
   const completeTodoHandler = async (id) => {
     const result = await axios.post(
       "https://todo-jonghan.onrender.com/api/todo/complete",
-      { id }
+      {
+        id,
+      }
     );
     setTodos((todos) =>
       todos.map((todo) => {
